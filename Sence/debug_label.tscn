@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ukq8v5fpv1o6"]
+
+[ext_resource type="FontFile" uid="uid://ba8dkahonk5ix" path="res://Assert/fonts/PixelOperator8-Bold.ttf" id="1_pw5kp"]
+[ext_resource type="Script" uid="uid://drgls0k4aafhi" path="res://Scripts/Utilities/debug_label.gd" id="2_3sjpi"]
+
+[node name="Label" type="Label"]
+offset_left = -25.0
+offset_top = -58.0
+offset_right = 50.0
+offset_bottom = -9.0
+theme_override_fonts/font = ExtResource("1_pw5kp")
+theme_override_font_sizes/font_size = 8
+text = "state: x"
+vertical_alignment = 2
+script = ExtResource("2_3sjpi")

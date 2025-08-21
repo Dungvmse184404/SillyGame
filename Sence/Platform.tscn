@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://df33tfcb6d0p4"]
 
-[ext_resource type="Script" uid="uid://bjbi1asxc112h" path="res://Sence/Scripts/Terrain/platform.gd" id="1_p8bac"]
+[ext_resource type="Script" uid="uid://bjbi1asxc112h" path="res://Scripts/Terrain/platform.gd" id="1_p8bac"]
 [ext_resource type="Texture2D" uid="uid://duwdlpaw8oeg4" path="res://Assert/sprites/platforms.png" id="1_ylvv0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8bac"]
@@ -9,9 +9,7 @@ size = Vector2(32, 6)
 [node name="Platform" type="AnimatableBody2D"]
 script = ExtResource("1_p8bac")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="Platforms" type="Sprite2D" parent="Sprite2D"]
+[node name="Platforms" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
 texture = ExtResource("1_ylvv0")
 region_enabled = true

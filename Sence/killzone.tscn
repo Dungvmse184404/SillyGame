@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bltlffxqumkxb"]
 
-[ext_resource type="Script" uid="uid://1i2otamsksb8" path="res://Sence/Scripts/Damage/killzone.gd" id="1_qjpn1"]
+[ext_resource type="Script" uid="uid://1i2otamsksb8" path="res://Scripts/Damage/kill_zone.gd" id="1_qjpn1"]
 [ext_resource type="AudioStream" uid="uid://crm0rf7qrxg4t" path="res://Assert/sounds/tap.wav" id="2_rbk8i"]
 
-[node name="Killzone" type="Area2D"]
+[node name="KillZone" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_qjpn1")
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://jplujro7yrfg"]
 
-[ext_resource type="Script" uid="uid://c4ei4guq4e5gd" path="res://Sence/Scripts/Actor/dummy.gd" id="1_c2cc8"]
+[ext_resource type="Script" uid="uid://c4ei4guq4e5gd" path="res://Scripts/Actor/dummy.gd" id="1_c2cc8"]
 [ext_resource type="Texture2D" uid="uid://drslpy17ir382" path="res://Assert/sprites/Popcat/ezgif-frame-001.png" id="2_1sikd"]
 [ext_resource type="Texture2D" uid="uid://bky4c7kijfvk7" path="res://Assert/sprites/Popcat/ezgif-frame-002.png" id="3_iksor"]
 [ext_resource type="Texture2D" uid="uid://b3sn5iltoq5uk" path="res://Assert/sprites/Popcat/ezgif-frame-003.png" id="4_8b17h"]

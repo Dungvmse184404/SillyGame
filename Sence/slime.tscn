@@ -1,8 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://3c1h5txk05a5"]
+[gd_scene load_steps=22 format=3 uid="uid://3c1h5txk05a5"]
 
-[ext_resource type="Script" uid="uid://bw2wb7fajvxuu" path="res://Sence/Scripts/Enemy/GreenSlime/slime.gd" id="1_lbxre"]
+[ext_resource type="Script" uid="uid://bw2wb7fajvxuu" path="res://Scripts/Enemy/GreenSlime/slime.gd" id="1_lbxre"]
 [ext_resource type="Texture2D" uid="uid://dod1kf3s5n42t" path="res://Assert/sprites/slime_green.png" id="1_swvvu"]
-[ext_resource type="PackedScene" uid="uid://bltlffxqumkxb" path="res://Sence/killzone.tscn" id="2_lbxre"]
 [ext_resource type="PackedScene" uid="uid://cb71meuh1qi5d" path="res://Sence/damagezone.tscn" id="4_cny1r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hs3oc"]
@@ -166,16 +165,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cny1r"]
 size = Vector2(12, 11)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_cny1r"]
-a = Vector2(0, 2)
-b = Vector2(0, 12)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8lqs"]
+size = Vector2(8, 8)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_j8lqs"]
-a = Vector2(0, 2)
-b = Vector2(0, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_swvvu"]
-size = Vector2(14, 13)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1fla"]
+size = Vector2(8, 8)
 
 [node name="Slime" type="CharacterBody2D"]
 collision_layer = 0
@@ -195,13 +189,15 @@ shape = SubResource("RectangleShape2D_cny1r")
 collision_layer = 0
 
 [node name="SlimeHitboxLeft" type="CollisionShape2D" parent="Damagezone"]
-position = Vector2(-7, -3)
-shape = SubResource("SegmentShape2D_cny1r")
+position = Vector2(-4, 4)
+shape = SubResource("RectangleShape2D_j8lqs")
+disabled = true
 debug_color = Color(0.997686, 0, 0.160345, 0.42)
 
 [node name="SlimeHitboxRight" type="CollisionShape2D" parent="Damagezone"]
-position = Vector2(7, -3)
-shape = SubResource("SegmentShape2D_j8lqs")
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_w1fla")
+disabled = true
 debug_color = Color(0.997729, 0, 0.159364, 0.42)
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
@@ -212,20 +208,16 @@ target_position = Vector2(-7, 0)
 
 [node name="ViewRange" type="RayCast2D" parent="."]
 modulate = Color(1, 0.1, 0.1, 1)
-position = Vector2(-3, 0)
+position = Vector2(-1, 0)
 target_position = Vector2(150, 0)
 collision_mask = 3
-
-[node name="Killzone" parent="." instance=ExtResource("2_lbxre")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, 1.375)
-shape = SubResource("RectangleShape2D_swvvu")
-disabled = true
 
 [node name="AttackTimer" type="Timer" parent="."]
 
 [node name="ForgetTimer" type="Timer" parent="."]
 
+[node name="TrackTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="ForgetTimer" to="." method="_on_forget_timer_timeout"]
+[connection signal="timeout" from="TrackTimer" to="." method="_on_track_timer_timeout"]

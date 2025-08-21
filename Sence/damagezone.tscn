@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cb71meuh1qi5d"]
 
-[ext_resource type="Script" uid="uid://y2tyktyg4uh8" path="res://Sence/Scripts/Damage/damagezone.gd" id="1_87n1u"]
+[ext_resource type="Script" uid="uid://y2tyktyg4uh8" path="res://Scripts/Damage/damage_zone.gd" id="1_87n1u"]
 
-[node name="Damagezone" type="Area2D"]
+[node name="DamageZone" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_87n1u")
 
